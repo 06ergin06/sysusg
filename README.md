@@ -82,6 +82,3 @@ CPU:
 Disk: 
 %45
 ```
-## License
-
-This script is provided as-is for educational and personal use.
