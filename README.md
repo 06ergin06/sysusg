@@ -51,23 +51,6 @@ chmod +x script.sh
 ./script.sh
 ```
 
-### Real-time Monitoring with Watch
-
-For continuous monitoring, you can use the `watch` command to run the script at regular intervals:
-
-```bash
-# Update every 2 seconds (default)
-watch ./script.sh
-
-# Update every 1 second
-watch -n 1 ./script.sh
-
-# Update every 5 seconds
-watch -n 5 ./script.sh
-
-# Exit watch mode by pressing Ctrl+C
-```
-
 ## Sample Output
 
 ```text

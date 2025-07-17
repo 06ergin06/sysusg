@@ -34,6 +34,13 @@ total_swap=$(free | grep Swap: | awk '{print $2}')
 used_swap=$(free | grep Swap: | awk '{print $3}')
 swap_perc=$(free -b | awk '/Swap:/ {printf "%.0f", ($3/$2)*100}')
 
+if [ "$total_swap" -gt 0 ]; then
+    swap_perc=$(free -b | awk '/Swap:/ {printf "%.0f", ($3/$2)*100}')
+else
+    swap_perc=0
+fi
+
+
 if [ "$swap_perc" -ge 1 ]; then
     echo -e "${red}$total_swap_gib / $used_swap_gib ${reset}"
 else
