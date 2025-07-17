@@ -35,7 +35,7 @@ used_swap=$(LANG=C free | grep Swap: | awk '{print $3}')
 swap_perc=$(LANG=C free -b | awk '/Swap:/ {printf "%.0f", ($3/$2)*100}')
 
 if [ "$total_swap" -gt 0 ]; then
-    swap_perc=$(free -b | awk '/Swap:/ {printf "%.0f", ($3/$2)*100}')
+    swap_perc=$(LANG=C free -b | awk '/Swap:/ {printf "%.0f", ($3/$2)*100}')
 else
     swap_perc=0
 fi
