@@ -11,12 +11,12 @@ echo -e "${bold}System Usage Analysis${reset} \n"
 
 
 echo -e "${italic}Memory: ${reset}"
-total_mem_gib=$(free -h | grep Mem: | awk '{print $2}')
-used_mem_gib=$(free -h | grep Mem: | awk '{print $3}')
+total_mem_gib=$(LANG=C free -h | grep Mem: | awk '{print $2}')
+used_mem_gib=$(LANG=C free -h | grep Mem: | awk '{print $3}')
 
-total_mem=$(free | grep Mem: | awk '{print $2}')
-used_mem=$(free | grep Mem: | awk '{print $3}')
-mem_perc=$(free -b | awk '/Mem:/ {printf "%.0f", ($3/$2)*100}')
+total_mem=$(LANG=C free | grep Mem: | awk '{print $2}')
+used_mem=$(LANG=C free | grep Mem: | awk '{print $3}')
+mem_perc=$(LANG=C free -b | awk '/Mem:/ {printf "%.0f", ($3/$2)*100}')
 
 
 if [ $mem_perc -ge 50 ]; then
@@ -27,12 +27,12 @@ fi
 
 
 echo -e "${italic}Swap: ${reset}"
-total_swap_gib=$(free -h | grep Swap: | awk '{print $2}')
-used_swap_gib=$(free -h | grep Swap: | awk '{print $3}')
+total_swap_gib=$(LANG=C free -h | grep Swap: | awk '{print $2}')
+used_swap_gib=$(LANG=C free -h | grep Swap: | awk '{print $3}')
 
-total_swap=$(free | grep Swap: | awk '{print $2}')
-used_swap=$(free | grep Swap: | awk '{print $3}')
-swap_perc=$(free -b | awk '/Swap:/ {printf "%.0f", ($3/$2)*100}')
+total_swap=$(LANG=C free | grep Swap: | awk '{print $2}')
+used_swap=$(LANG=C free | grep Swap: | awk '{print $3}')
+swap_perc=$(LANG=C free -b | awk '/Swap:/ {printf "%.0f", ($3/$2)*100}')
 
 if [ "$total_swap" -gt 0 ]; then
     swap_perc=$(free -b | awk '/Swap:/ {printf "%.0f", ($3/$2)*100}')
