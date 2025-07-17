@@ -9,7 +9,7 @@ reset="\e[0m"
 
 echo -e "${bold}System Usage Analysis${reset} \n"
 
-
+# Memory analysis
 echo -e "${italic}Memory: ${reset}"
 total_mem_gib=$(LANG=C free -h | grep Mem: | awk '{print $2}')
 used_mem_gib=$(LANG=C free -h | grep Mem: | awk '{print $3}')
@@ -25,7 +25,7 @@ else
     echo -e "${green}$total_mem_gib / $used_mem_gib ${reset}"
 fi
 
-
+# Swap analysis
 echo -e "${italic}Swap: ${reset}"
 total_swap_gib=$(LANG=C free -h | grep Swap: | awk '{print $2}')
 used_swap_gib=$(LANG=C free -h | grep Swap: | awk '{print $3}')
@@ -47,6 +47,8 @@ else
     echo -e "${green}$total_swap_gib / $used_swap_gib ${reset}"
 fi
 
+
+# CPU analysis
 echo -e "${italic}CPU: ${reset}"
 cpu_usage=$(top -bn1 | awk '/Cpu/ { print $2}')
 cpu_usage_int=$(echo "$cpu_usage" | cut -d',' -f1)
@@ -59,6 +61,8 @@ else
     echo -e "${red}%$cpu_usage${reset}"
 fi
 
+
+# Disk analysis
 echo -e "${italic}Disk: ${reset}"
 
 root_disk_usg=$(df -h | awk '$NF == "/" {print $5}' | cut -d'%' -f1)
