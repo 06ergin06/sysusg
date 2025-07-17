@@ -32,13 +32,13 @@ You can download the script directly using `curl` or `wget`:
 
 ```bash
 # Using curl
-curl -O https://raw.githubusercontent.com/username/sysusg/main/script.sh
+curl -O https://raw.githubusercontent.com/06ergin06/sysusg/main/script.sh
 
 # Using wget
-wget https://raw.githubusercontent.com/username/sysusg/main/script.sh
+wget https://raw.githubusercontent.com/06ergin06/sysusg/main/script.sh
 
 # Or clone the entire repository
-git clone https://github.com/username/sysusg.git
+git clone https://github.com/06ergin06/sysusg.git
 cd sysusg
 ```
 
